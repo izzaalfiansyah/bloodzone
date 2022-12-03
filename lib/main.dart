@@ -1,3 +1,4 @@
+import 'package:bloodzone/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bloodzone/views/splash.dart';
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Bloodzone',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: cPrimary,
         textTheme: GoogleFonts.montserratTextTheme(),
       ),
       home: SplashScreen(),

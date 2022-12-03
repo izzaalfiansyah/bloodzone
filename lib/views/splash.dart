@@ -41,7 +41,7 @@ class SplashScreenState extends State<SplashScreen> {
               size: 90,
             ),
             Text(
-              'BloodZone',
+              'BLOODZONE',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

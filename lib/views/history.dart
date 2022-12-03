@@ -3,98 +3,106 @@
 import 'package:bloodzone/constant.dart';
 import 'package:bloodzone/layouts/section.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class HistoryScreen extends StatefulWidget {
+  HistoryScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return SectionLayout(
       content: ListView(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.all(20),
+            alignment: Alignment.center,
             decoration: BoxDecoration(
               color: cPrimary,
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Text(
+              'History',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
               children: [
-                SizedBox(height: 50),
-                Text(
-                  'Hai Muhammad Izza Alfiansyah',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                    color: Colors.white,
+                SizedBox(width: 10),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: cPrimary,
+                      boxShadow: shadowBase,
+                    ),
+                    child: Icon(
+                      Icons.chevron_left,
+                      color: Colors.white,
+                      size: 30,
+                    ),
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
-                Text(
-                  'Semoga hari anda menyenangkan!',
-                  style: TextStyle(color: Colors.white),
+                SizedBox(width: 30),
+                Expanded(
+                  child: Container(
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: shadowBase,
+                    ),
+                    child: Center(
+                      child: Text(
+                        '2022',
+                        style: TextStyle(
+                          color: cPrimary,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-                SizedBox(height: 50),
+                SizedBox(width: 30),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: cPrimary,
+                      boxShadow: shadowBase,
+                    ),
+                    child: Icon(
+                      Icons.chevron_right,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10),
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Column(
-                children: [
-                  Row(
-                    children: List.generate(3, (index) {
-                      String name = "banner-${index + 1}";
-                      List alignments = [
-                        Alignment.center,
-                        Alignment.centerLeft,
-                        Alignment.centerRight,
-                      ];
-
-                      return Container(
-                        width: Get.width * .8,
-                        height: 150,
-                        margin: EdgeInsets.only(right: 10, left: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: shadowBase,
-                          image: DecorationImage(
-                            image: AssetImage('img/$name.png'),
-                            fit: BoxFit.cover,
-                            alignment: alignments[index],
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
-                  SizedBox(height: 20),
-                ],
-              ),
-            ),
-          ),
-          Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Request Pendonoran',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 Column(
-                  children: List.generate(3, (index) {
+                  children: List.generate(10, (index) {
                     return Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
